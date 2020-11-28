@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="itemIV"
+            type="com.arraigntech.testdemo.ui.data.ResultPojo.VolumeInfo" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="3dp">
+
+        <ImageView
+            android:id="@+id/imgIV"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            thumbnailImage="@{itemIV.imageLinks.thumbnail}"
+            android:src="@drawable/placeholder"
+            app:layout_constraintBottom_toTopOf="@id/titleTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@{itemIV.title}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgIV" />
+
+        <TextView
+            android:id="@+id/subTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@{itemIV.publisher}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTV" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="@string/type_price"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/subTitleTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
